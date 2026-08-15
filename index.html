@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Nihal Mulla, BHMS FCHD — Homeopathic Consultation, Indiranagar</title>
+<meta name="description" content="Dr. Nihal Mulla (BHMS, FCHD) treats skin, hair, allergy and respiratory conditions with homeopathy at Dr. Batra's, Indiranagar. Book a consultation.">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF6EE;
+    --paper:#FFFFFF;
+    --ink:#26301F;
+    --muted:#666f5e;
+    --forest:#37543A;
+    --forest-dark:#233524;
+    --terracotta:#BD5A34;
+    --terracotta-dark:#9A4626;
+    --gold:#B8873C;
+    --line:#E3DAC4;
+    --line-soft:#EDE6D3;
+    --radius:6px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Work Sans',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:16px;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px;}
+  ul{list-style:none;}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:13px 26px;border-radius:3px;font-weight:600;
+    font-size:15px;font-family:'Work Sans',sans-serif;
+    border:1px solid transparent;cursor:pointer;
+    transition:background .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .btn svg{width:17px;height:17px;flex-shrink:0;}
+  .btn-primary{ background:var(--terracotta); color:#fff; }
+  .btn-primary:hover{ background:var(--terracotta-dark); }
+  .btn-line{ background:transparent; border-color:var(--ink); color:var(--ink); }
+  .btn-line:hover{ background:var(--ink); color:var(--cream); }
+  .btn-block{ width:100%; justify-content:center; }
+
+  /* Header */
+  header{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:100;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand img{width:32px;height:32px;border-radius:7px;}
+  .brand-text{font-family:'Fraunces',serif;font-weight:600;font-size:19px;line-height:1.1;}
+  .brand-text small{display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-top:1px;}
+  .nav-links{display:flex;gap:30px;font-size:14.5px;}
+  .nav-links a{border-bottom:1px solid transparent;padding-bottom:2px;}
+  .nav-links a:hover{border-color:var(--terracotta);}
+  @media (max-width:820px){.nav-links{display:none;}}
+
+  /* Hero */
+  .hero{padding:56px 0 64px;}
+  .hero-inner{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+  @media (max-width:860px){.hero-inner{grid-template-columns:1fr;}}
+
+  .kicker{
+    font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--forest);margin-bottom:18px;display:flex;align-items:center;gap:10px;
+  }
+  .kicker::before{content:"";width:26px;height:1px;background:var(--forest);display:inline-block;}
+
+  h1{font-size:2.7rem;line-height:1.12;margin-bottom:20px;}
+  h1 em{font-style:italic;color:var(--forest);}
+  .hero-lead{color:var(--muted);font-size:17.5px;max-width:480px;margin-bottom:30px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px;}
+
+  .hero-facts{display:flex;gap:0;border-top:1px solid var(--line);padding-top:20px;}
+  .hero-facts div{flex:1;padding-right:20px;}
+  .hero-facts .num{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:var(--forest);}
+  .hero-facts .label{font-size:12.5px;color:var(--muted);margin-top:2px;}
+
+  .hero-visual{position:relative;}
+  .photo-frame{
+    position:relative;
+    background:var(--forest);
+    padding:14px;
+    clip-path:polygon(0 0, 100% 0, 100% 92%, 92% 100%, 0 100%);
+  }
+  .photo-frame img{
+    width:100%;
+    clip-path:polygon(0 0, 100% 0, 100% 92%, 92% 100%, 0 100%);
+    filter:grayscale(0.08);
+  }
+  .rating-tag{
+    position:absolute;bottom:-22px;left:-22px;
+    background:var(--paper);border:1px solid var(--line);
+    padding:14px 18px;display:flex;align-items:center;gap:12px;
+    box-shadow:0 6px 18px rgba(38,48,31,0.08);
+  }
+  @media (max-width:860px){.rating-tag{left:14px;}}
+  .rating-tag .stars{color:var(--gold);font-size:15px;letter-spacing:1px;}
+  .rating-tag .rt-num{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;}
+  .rating-tag .rt-label{font-size:11.5px;color:var(--muted);}
+
+  section{padding:78px 0;}
+  .section-top{margin-bottom:44px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;}
+  .section-top h2{font-size:2rem;}
+  .section-top p{color:var(--muted);max-width:420px;font-size:15px;}
+
+  #about{border-top:1px solid var(--line);}
+  .about-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:56px;}
+  @media (max-width:820px){.about-grid{grid-template-columns:1fr;}}
+  .about-text p{color:var(--muted);margin-bottom:16px;}
+  .about-text p:first-child{font-size:17.5px;color:var(--ink);}
+
+  .fact-list li{
+    display:flex;justify-content:space-between;gap:16px;
+    padding:14px 0;border-bottom:1px solid var(--line-soft);font-size:14.5px;
+  }
+  .fact-list li span:first-child{color:var(--muted);}
+  .fact-list li span:last-child{font-weight:600;text-align:right;}
+
+  /* Services - editorial numbered list */
+  #services{border-top:1px solid var(--line);}
+  .service-list{display:grid;grid-template-columns:1fr 1fr;column-gap:56px;}
+  @media (max-width:820px){.service-list{grid-template-columns:1fr;}}
+  .service-row{
+    display:grid;grid-template-columns:52px 1fr;gap:18px;
+    padding:26px 0;border-bottom:1px solid var(--line-soft);
+  }
+  .service-row .idx{font-family:'Fraunces',serif;font-style:italic;font-size:1.4rem;color:var(--terracotta);}
+  .service-row h3{font-size:17px;margin-bottom:6px;font-weight:600;font-family:'Work Sans',sans-serif;}
+  .service-row p{color:var(--muted);font-size:14.5px;}
+
+  /* Reviews */
+  #reviews{border-top:1px solid var(--line);background:var(--paper);}
+  .review-summary{
+    display:flex;align-items:center;gap:22px;margin-bottom:34px;flex-wrap:wrap;
+    padding-bottom:34px;border-bottom:1px solid var(--line-soft);
+  }
+  .review-summary .rt-num{font-family:'Fraunces',serif;font-size:3rem;font-weight:600;}
+  .review-summary .stars{color:var(--gold);font-size:18px;letter-spacing:2px;}
+  .review-summary .meta{color:var(--muted);font-size:14px;margin-top:2px;}
+
+  .filter-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px;}
+  .filter-tab{
+    padding:9px 18px;border:1px solid var(--line);border-radius:30px;
+    font-size:13.5px;font-weight:500;background:transparent;cursor:pointer;color:var(--muted);
+  }
+  .filter-tab.active{background:var(--ink);border-color:var(--ink);color:var(--cream);}
+
+  .review-columns{column-count:3;column-gap:22px;}
+  @media (max-width:900px){.review-columns{column-count:2;}}
+  @media (max-width:620px){.review-columns{column-count:1;}}
+  .review-card{
+    break-inside:avoid;margin-bottom:22px;
+    border:1px solid var(--line);padding:22px;background:var(--cream);
+  }
+  .review-quote{font-family:'Fraunces',serif;font-style:italic;font-size:1.6rem;color:var(--line);line-height:1;margin-bottom:6px;}
+  .review-text{font-size:14.5px;color:var(--ink);margin-bottom:16px;}
+  .review-text b{color:var(--forest);}
+  .review-foot{display:flex;align-items:center;gap:10px;}
+  .r-avatar{
+    width:34px;height:34px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:600;font-size:13px;color:#fff;
+  }
+  .review-name{font-size:13.5px;font-weight:600;}
+  .review-meta{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:5px;}
+  .g-badge{width:12px;height:12px;flex-shrink:0;}
+
+  /* Booking */
+  #booking{border-top:1px solid var(--line);}
+  .booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  @media (max-width:860px){.booking-grid{grid-template-columns:1fr;}}
+  .booking-side h2{font-size:2rem;margin-bottom:16px;}
+  .booking-side p{color:var(--muted);margin-bottom:24px;}
+  .fee-line{
+    display:flex;align-items:baseline;gap:10px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:24px;
+  }
+  .fee-line .amt{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:600;color:var(--forest);}
+  .fee-line .note{font-size:13.5px;color:var(--muted);}
+  .direct-contacts{display:flex;flex-direction:column;gap:12px;}
+  .direct-contacts a{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--ink);}
+  .direct-contacts svg{width:18px;height:18px;color:var(--forest);flex-shrink:0;}
+
+  .booking-form{background:var(--paper);border:1px solid var(--line);padding:32px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:7px;color:var(--ink);}
+  .field input,.field select,.field textarea{
+    width:100%;padding:12px 14px;border:1px solid var(--line);background:var(--cream);
+    font-family:'Work Sans',sans-serif;font-size:14.5px;color:var(--ink);border-radius:3px;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--forest);}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:480px){.field-row{grid-template-columns:1fr;}}
+  .form-note{font-size:12.5px;color:var(--muted);margin-top:14px;text-align:center;}
+
+  /* Contact */
+  #contact{border-top:1px solid var(--line);}
+  .contact-row{display:flex;gap:44px;flex-wrap:wrap;}
+  .contact-item{display:flex;align-items:center;gap:14px;}
+  .contact-item .ico{
+    width:44px;height:44px;border:1px solid var(--line);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-item .ico svg{width:19px;height:19px;color:var(--forest);}
+  .contact-item .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+  .contact-item .val{font-weight:600;font-size:15px;}
+
+  footer{
+    border-top:1px solid var(--line);padding:34px 0;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    font-size:13px;color:var(--muted);
+  }
+  footer .f-brand{display:flex;align-items:center;gap:9px;color:var(--ink);font-weight:600;}
+  footer .f-brand img{width:22px;height:22px;border-radius:5px;}
+
+  .float-cta{
+    position:fixed;bottom:22px;right:22px;z-index:150;
+    background:var(--terracotta);color:#fff;
+    display:flex;align-items:center;gap:9px;
+    padding:13px 20px;border-radius:30px;font-weight:600;font-size:14px;
+    box-shadow:0 8px 22px rgba(157,70,38,0.35);
+  }
+  .float-cta svg{width:18px;height:18px;}
+  @media (max-width:600px){.float-cta span{display:none;} .float-cta{padding:14px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav container">
+    <div class="brand">
+      <img src="logo.png" alt="Clinic mark">
+      <div class="brand-text">Dr. Nihal Mulla<small>Homeopathy &middot; BHMS, FCHD</small></div>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Conditions Treated</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#booking">Book Consultation</a>
+    </div>
+    <a class="btn btn-primary" href="#booking">Book Consultation</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <div class="kicker">Homeopathic Consultation, Indiranagar</div>
+      <h1>Homeopathy for your skin, hair, and everyday illness — <em>treated at the root.</em></h1>
+      <p class="hero-lead">Dr. Nihal Mulla practises at Dr. Batra's, Indiranagar, working with patients on acne and skin concerns, hair fall and alopecia, seasonal allergies, and recurring cold, cough or bronchitis.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#booking">Book a Consultation</a>
+        <a class="btn btn-line" href="https://wa.me/916360379748" target="_blank" rel="noopener">Message on WhatsApp</a>
+      </div>
+      <div class="hero-facts">
+        <div><div class="num">4.4 yrs</div><div class="label">In clinical practice</div></div>
+        <div><div class="num">2.5 yrs</div><div class="label">At Dr. Batra's</div></div>
+        <div><div class="num">₹499</div><div class="label">Consultation fee</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="photo-frame">
+        <img src="photo.PNG" alt="Dr. Nihal Mulla, homeopathic doctor">
+      </div>
+      <div class="rating-tag">
+        <div class="stars">★★★★★</div>
+        <div>
+          <div class="rt-num">5.0</div>
+          <div class="rt-label">18+ Google reviews</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-text">
+      <div class="kicker">About Dr. Mulla</div>
+      <p>Nihal Mulla has spent the last 4.4 years practising homeopathy, including 2.5 years treating patients at Dr. Batra's, Indiranagar. His patients frequently mention two things: he explains what's actually going on before prescribing anything, and he follows up — checking in on skin, hair and allergy cases over months, not just at the first visit.</p>
+      <p>His caseload leans toward dermatology — acne, pigmentation, hair fall, alopecia areata — alongside general homeopathy for allergies, cold, cough, bronchitis and recurring nasal issues. Several long-running cases in his reviews (6-month allergy programmes, 12-month alopecia treatment) reflect a practice built around tracked, ongoing care rather than one-off prescriptions.</p>
+    </div>
+    <ul class="fact-list">
+      <li><span>Degree</span><span>BHMS</span></li>
+      <li><span>Fellowship</span><span>FCHD — Fellowship in Homeopathic Dermatology, MUHS</span></li>
+      <li><span>Practising since</span><span>4.4 years</span></li>
+      <li><span>At Dr. Batra's</span><span>2.5 years</span></li>
+      <li><span>Consultation fee</span><span>₹499 (medicines billed separately)</span></li>
+      <li><span>Location</span><span>Dr. Batra's, Indiranagar</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-top">
+      <h2>Conditions he treats</h2>
+      <p>Drawn from the cases patients have actually written in about.</p>
+    </div>
+    <div class="service-list">
+      <div class="service-row">
+        <div class="idx">01</div>
+        <div><h3>Skin &amp; Acne</h3><p>Persistent pimples, breakouts and general skin concerns — several patients note visible change within the first month.</p></div>
+      </div>
+      <div class="service-row">
+        <div class="idx">02</div>
+        <div><h3>Hair Fall &amp; Alopecia Areata</h3><p>From dandruff-related hair fall to bald-patch alopecia, managed with structured programmes of several months.</p></div>
+      </div>
+      <div class="service-row">
+        <div class="idx">03</div>
+        <div><h3>Hydrafacial Sessions</h3><p>Supervised hydrafacial treatment courses, with patients reporting improvement within a few sittings.</p></div>
+      </div>
+      <div class="service-row">
+        <div class="idx">04</div>
+        <div><h3>Respiratory &amp; Food Allergies</h3><p>Longer-term allergy management, often run as multi-month programmes alongside other specialists at the clinic.</p></div>
+      </div>
+      <div class="service-row">
+        <div class="idx">05</div>
+        <div><h3>Cold, Cough &amp; Bronchitis</h3><p>Diagnosis that looks past the immediate symptom — one case of recurring cough led to a bronchitis diagnosis and a full year's course.</p></div>
+      </div>
+      <div class="service-row">
+        <div class="idx">06</div>
+        <div><h3>Nasal &amp; ENT Complaints</h3><p>Nasal polyps and chronic congestion, tracked visit over visit until symptoms measurably reduce.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <div class="review-summary">
+      <div class="rt-num">5.0</div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="meta">18 reviews on Google, patients of Dr. Batra's Indiranagar</div>
+      </div>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All reviews</button>
+      <button class="filter-tab" data-filter="skin">Skin &amp; Hair</button>
+      <button class="filter-tab" data-filter="allergy">Allergy &amp; Respiratory</button>
+      <button class="filter-tab" data-filter="general">General</button>
+    </div>
+
+    <div class="review-columns" id="reviewColumns">
+
+      <div class="review-card" data-category="general">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">I consulted Dr. <b>Nihal</b>. I had my treatment and got the best results.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#37543A">S</div><div><div class="review-name">Srinivas Goutham</div><div class="review-meta">3 years ago · 6 reviews</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="general">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Great experience. I've been consulting Dr <b>Nihal</b> and he is friendly and approachable.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#BD5A34">K</div><div><div class="review-name">Kirthana Sivadas</div><div class="review-meta">2 years ago · 1 review</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="skin">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">One of the best treatments for skin issues — I had heavy pimples but it's recovering now. Strongly recommending Dr. <b>Nihal</b>.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#B8873C">Y</div><div><div class="review-name">Yasaswini</div><div class="review-meta">3 years ago · 2 reviews</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="general">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">I consulted Dr. <b>Nihal</b>. Good experience — he identified the problem and explained it correctly.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#37543A">M</div><div><div class="review-name">Monica Mulla</div><div class="review-meta">3 years ago · 2 reviews</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="skin">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Taking hydrafacial treatment for 3 months now — feeling good and seeing real results. Thanks Dr. <b>Nihal</b>.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#9A4626">S</div><div><div class="review-name">Siddu Nuna</div><div class="review-meta">3 years ago · 3 reviews</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="skin">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Been coming in for skin treatment and the sessions have been amazing. Dr. <b>Nihal</b> handles it effectively every time.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#37543A">A</div><div><div class="review-name">Anitha Vaduguru</div><div class="review-meta">3 years ago · 2 reviews</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="skin">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Dr. <b>Nihal</b> is doing the best treatment — I saw a difference in my face within one month. Very friendly, invested in everything. Best doctor ever.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#B8873C">A</div><div><div class="review-name">Anusuya S</div><div class="review-meta">3 years ago · Local Guide · 8 reviews</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="general">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Great experience, the treatment is really effective. Dr <b>Nihal</b> is one of the best doctors there and gives great insight on your issues.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#BD5A34">A</div><div><div class="review-name">Aarya Shambhavi</div><div class="review-meta">a year ago · 7 reviews</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="skin">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Before I had a lot of hairfall, now hardly any. Thank you Dr. <b>Nihal</b> and team.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#37543A">K</div><div><div class="review-name">Koushika Adinarayana</div><div class="review-meta">3 years ago · 2 reviews</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="skin">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Consulted Dr <b>Nihal</b> for my mother's skin treatment. Good treatment and support throughout, with drastic changes seen. Would recommend Dr. Batra's.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#9A4626">H</div><div><div class="review-name">Harshitha Jayakumar</div><div class="review-meta">2 years ago · 6 reviews</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="skin">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Came in for hair fall with dandruff. Dr. <b>Nihal</b> examined my scalp, explained the treatment course, and I saw results within a few days.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#B8873C">T</div><div><div class="review-name">Dr Tejakumar Galla</div><div class="review-meta">3 years ago · 2 reviews · 6 photos</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="skin">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Taking hydrafacial sessions and seeing a difference within a few visits. Dr <b>Nihal</b> explains the whole process and completes it with real care.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#37543A">D</div><div><div class="review-name">Deekshita Yepuri</div><div class="review-meta">3 years ago · 2 reviews</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="allergy">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Six months into treatment for respiratory and food allergy. Dr. <b>Nihal</b> and Dr. Surabhi have helped me feel far better than before.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#BD5A34">B</div><div><div class="review-name">Brinda Gowda</div><div class="review-meta">2 years ago (edited) · 6 reviews</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="allergy">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Came in for cold and cough — Dr. <b>Nihal</b> found I had bronchitis too. Took a 1-year course and it's improved a lot. Thank you, Dr. Nihal.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#9A4626">B</div><div><div class="review-name">Biplab Nayak</div><div class="review-meta">a year ago · 1 review</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="general">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Seeing good improvement in my overall health and body pain. Dr Mulla <b>Nihal</b> is attentive, takes his time, and you can tell he cares about his patients.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#B8873C">S</div><div><div class="review-name">Shop With Love UK</div><div class="review-meta">2 years ago · 1 review</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="allergy">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">First visit — had cold, cough and a throat infection. Dr. <b>Nihal</b> found my nasal polyps had increased; now one side has already decreased.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#37543A">S</div><div><div class="review-name">Sikha</div><div class="review-meta">a year ago · 4 reviews</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="skin">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Came in with bald patches — Alopecia Areata. Dr <b>Nihal</b> and Dr Rajni Thayappan identified it; within 3-4 months of a 12-month programme, it's almost cured.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#BD5A34">S</div><div><div class="review-name">Sagnik Chatterjee</div><div class="review-meta">a year ago · Local Guide · 6 reviews · 1 photo</div></div></div>
+      </div>
+
+      <div class="review-card" data-category="skin">
+        <div class="review-quote">&ldquo;</div>
+        <p class="review-text">Really good experience with Dr. Batra's. Thank you Dr. <b>Nihal</b> for your patience and thorough explanation of my hair condition — great professionalism.</p>
+        <div class="review-foot"><div class="r-avatar" style="background:#9A4626">T</div><div><div class="review-name">Tejaswini V Gowda</div><div class="review-meta">a year ago (edited) · Local Guide · 19 reviews</div></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="container booking-grid">
+    <div class="booking-side">
+      <div class="kicker">Book a Consultation</div>
+      <h2>Tell him what's going on, and he'll take it from there.</h2>
+      <p>Fill in the form and it will open WhatsApp with your details pre-filled, ready to send directly to Dr. Mulla. He typically replies the same day to confirm a slot at Dr. Batra's, Indiranagar.</p>
+      <div class="fee-line">
+        <span class="amt">₹499</span>
+        <span class="note">consultation fee — medicines billed separately</span>
+      </div>
+      <div class="direct-contacts">
+        <a href="tel:+916360379748">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 63603 79748 (Call / WhatsApp)
+        </a>
+        <a href="mailto:drmullanihal@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+          drmullanihal@gmail.com
+        </a>
+        <a href="https://www.instagram.com/10xhealthhack/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+          @10xhealthhack
+        </a>
+      </div>
+    </div>
+
+    <form class="booking-form" id="bookingForm">
+      <div class="field">
+        <label for="fname">Full name</label>
+        <input type="text" id="fname" required placeholder="Your name">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="fphone">WhatsApp number</label>
+          <input type="tel" id="fphone" required placeholder="10-digit number">
+        </div>
+        <div class="field">
+          <label for="ftime">Preferred time</label>
+          <select id="ftime">
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="fconcern">What would you like to consult about?</label>
+        <select id="fconcern">
+          <option>Skin &amp; Acne</option>
+          <option>Hair Fall / Alopecia</option>
+          <option>Hydrafacial</option>
+          <option>Allergy (Respiratory / Food)</option>
+          <option>Cold, Cough &amp; Bronchitis</option>
+          <option>Nasal / ENT</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fmsg">Briefly describe your concern (optional)</label>
+        <textarea id="fmsg" rows="3" placeholder="E.g. hair fall for the past 2 months"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.1-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.4-.5.2-.4a.5.5 0 0 0 0-.5c-.1-.1-.7-1.6-.9-2.2s-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 6 6 0 0 0 1.3 3.2 13.6 13.6 0 0 0 5.2 4.6c.7.3 1.3.5 1.7.6a4.1 4.1 0 0 0 1.9.1 3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+        Send via WhatsApp
+      </button>
+      <p class="form-note">Opens WhatsApp with your details filled in — nothing is sent automatically.</p>
+    </form>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="kicker">Reach him directly</div>
+    <div class="contact-row" style="margin-top:20px;">
+      <div class="contact-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><div class="label">WhatsApp</div><div class="val">+91 63603 79748</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg></div>
+        <div><div class="label">Email</div><div class="val">drmullanihal@gmail.com</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg></div>
+        <div><div class="label">Instagram</div><div class="val">@10xhealthhack</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="container">
+  <div class="f-brand"><img src="logo.png" alt="logo">Dr. Nihal Mulla, BHMS FCHD</div>
+  <div>Dr. Batra's, Indiranagar · © 2026</div>
+</footer>
+
+<a class="float-cta" href="#booking">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.1-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.4-.5.2-.4a.5.5 0 0 0 0-.5c-.1-.1-.7-1.6-.9-2.2s-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 6 6 0 0 0 1.3 3.2 13.6 13.6 0 0 0 5.2 4.6c.7.3 1.3.5 1.7.6a4.1 4.1 0 0 0 1.9.1 3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  <span>Book Consultation</span>
+</a>
+
+<script>
+  // Review filter tabs
+  var tabs = document.querySelectorAll('.filter-tab');
+  var cards = document.querySelectorAll('.review-card');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      var f = tab.getAttribute('data-filter');
+      cards.forEach(function(card){
+        card.style.display = (f === 'all' || card.getAttribute('data-category') === f) ? '' : 'none';
+      });
+    });
+  });
+
+  // Booking form -> WhatsApp
+  document.getElementById('bookingForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('fname').value.trim();
+    var phone = document.getElementById('fphone').value.trim();
+    var time = document.getElementById('ftime').value;
+    var concern = document.getElementById('fconcern').value;
+    var msg = document.getElementById('fmsg').value.trim();
+
+    var text = "Hello Dr. Nihal, I'd like to book a consultation.\n\n" +
+      "Name: " + name + "\n" +
+      "Contact number: " + phone + "\n" +
+      "Concern: " + concern + "\n" +
+      "Preferred time: " + time +
+      (msg ? "\nDetails: " + msg : "");
+
+    var url = "https://wa.me/916360379748?text=" + encodeURIComponent(text);
+    window.open(url, "_blank");
+  });
+</script>
+
+</body>
+</html>
