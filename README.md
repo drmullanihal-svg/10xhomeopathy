@@ -12,3 +12,7 @@ This repo (`drmullanihal-svg/10xhomeopathy`) is the canonical source. Changes ar
 2. Branch off `main`, make your change, and push to your fork.
 3. Open a PR from your fork's branch into this repo's `main`.
 4. After merge, sync your local `main` with `git fetch upstream && git merge upstream/main --ff-only`.
+
+## Hosting
+
+Served via GitHub Pages from the `main` branch, with a custom domain (`10xhomeopathy.in`) configured through the `CNAME` file and DNS records at the registrar.
