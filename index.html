@@ -6,7 +6,7 @@
 <body>
 <nav class="nav"><div class="wrap navin">
 <button class="brand" onclick="showHome('top')"><img src="logo.png"><div>10X Homeopathy<small>by Dr Nihal</small></div></button>
-<div class="navlinks"><button onclick="showHome('top')">Home</button><button onclick="showHome('about')">About</button><button onclick="showHome('treatments')">Treatments</button><button onclick="showHome('kits')">Buy Kits</button><button onclick="showHome('care')">10X Care</button><button onclick="showHome('testimonials')">Testimonials</button><button onclick="showHome('contact')">Contact</button><a class="cta" href="https://wa.me/916360379748?text=Hello%20Dr%20Nihal%2C%20I%20would%20like%20to%20book%20an%20online%20consultation." target="_blank">Book Appointment</a></div>
+<div class="navlinks"><button onclick="showHome('top')">Home</button><button onclick="showHome('about')">About</button><button onclick="showHome('treatments')">Treatments</button><button onclick="showHome('kits')">Buy Kits</button><button onclick="showHome('care')">10X Care</button><button onclick="showHome('family')">10X Family</button><button onclick="showHome('testimonials')">Testimonials</button><button onclick="showHome('contact')">Contact</button><a class="cta" href="https://wa.me/916360379748?text=Hello%20Dr%20Nihal%2C%20I%20would%20like%20to%20book%20an%20online%20consultation." target="_blank">Book Appointment</a></div>
 </div></nav>
 
 <main id="app">
@@ -816,6 +816,61 @@
 <a class="btn btn-green" href="https://wa.me/916360379748?text=Hello%20Dr%20Nihal%2C%20I%20would%20like%20to%20know%20more%20about%2010X%20Care%20pricing." target="_blank">Book a Consultation →</a>
 </div></section>
 
+<section class="section family" id="family"><div class="wrap">
+<div class="head" style="margin:0 auto 40px;text-align:center"><div class="kicker">Community</div><h2>Welcome to the 10X Family</h2><p class="lead" style="margin:0 auto">A community built for learning, sharing and growing together.</p></div>
+
+<div class="family-chooser" id="familyChooser">
+  <div class="family-question">Who are you?</div>
+  <div class="family-options">
+    <button class="family-option" onclick="showFamilyPath('doctor')">
+      <span class="family-emoji">👨‍⚕️</span>
+      <h3>I'm a Doctor</h3>
+      <p>Connect with fellow practitioners and join the professional community.</p>
+    </button>
+    <button class="family-option" onclick="showFamilyPath('patient')">
+      <span class="family-emoji">💚</span>
+      <h3>I'm a Patient</h3>
+      <p>Join our community for health education, updates and support.</p>
+    </button>
+  </div>
+</div>
+
+<div class="family-path" id="familyPathDoctor" style="display:none">
+  <button class="family-back" onclick="showFamilyPath(null)">← Back</button>
+  <div class="kicker">Welcome, Doctor 👋</div>
+  <h3>Join the 10X Doctors Circle</h3>
+  <p class="lead" style="margin-bottom:14px">A space for doctors to:</p>
+  <ul class="family-list">
+    <li>Discuss clinical experiences</li>
+    <li>Share knowledge</li>
+    <li>Exchange ideas</li>
+    <li>Stay updated with 10X</li>
+    <li>Connect with fellow practitioners</li>
+  </ul>
+  <!-- TODO: replace with the real Doctors Circle WhatsApp group invite link -->
+  <a class="btn btn-green" href="#doctors-whatsapp-link-todo" target="_blank">Join 10X Doctors Circle →</a>
+  <p class="family-note">Please keep personal medical information private and avoid sharing sensitive patient details in the community.</p>
+</div>
+
+<div class="family-path" id="familyPathPatient" style="display:none">
+  <button class="family-back" onclick="showFamilyPath(null)">← Back</button>
+  <div class="kicker">Welcome to the 10X Family 💚</div>
+  <h3>Join the 10X Health Circle</h3>
+  <p class="lead" style="margin-bottom:14px">A community for:</p>
+  <ul class="family-list">
+    <li>Health education</li>
+    <li>Wellness tips</li>
+    <li>10X updates</li>
+    <li>New health resources</li>
+    <li>Community discussions</li>
+  </ul>
+  <!-- TODO: replace with the real Health Circle WhatsApp group invite link -->
+  <a class="btn btn-green" href="#patients-whatsapp-link-todo" target="_blank">Join 10X Health Circle →</a>
+  <p class="family-note">Please keep personal medical information private when sharing in the community.</p>
+</div>
+
+</div></section>
+
 <section class="section" id="testimonials"><div class="wrap"><div class="head"><div class="kicker">Patient experiences</div><h2>What patients have said about Dr. Nihal</h2><p class="lead">Selected excerpts from genuine public reviews written during Dr. Nihal’s previous clinical practice. These are historical professional feedback, not reviews of 10X Homeopathy.</p></div>
 <div class="review-grid">
 <div class="review-card"><div class="review-stars">★★★★★</div><p>“I consulted Dr. Nihal. I had my treatment and got best results.”</p><div class="review-author">Srinivas G******</div></div>
@@ -928,6 +983,16 @@ function toggleGuides(btn) {
   const list = btn.previousElementSibling;
   const open = list.classList.toggle('open');
   btn.textContent = open ? 'Show less ▴' : 'Show all conditions ▾';
+}
+
+function showFamilyPath(path) {
+  const chooser = document.getElementById('familyChooser');
+  const doc = document.getElementById('familyPathDoctor');
+  const pat = document.getElementById('familyPathPatient');
+  if (!chooser || !doc || !pat) return;
+  chooser.style.display = path ? 'none' : '';
+  doc.style.display = path === 'doctor' ? 'block' : 'none';
+  pat.style.display = path === 'patient' ? 'block' : 'none';
 }
 
 function kitCatIcon(cat) {
