@@ -92,7 +92,7 @@
       </div>
     </div>
 
-    <div class="kit-grid">
+    <div class="kit-groups" id="kitGrid">
         <article class="kit-card">
           <div class="kit-icon">💊</div>
           <span class="kit-cat">Skin &amp; Hair</span>
@@ -915,6 +915,55 @@ function toggleGuides(btn) {
   const open = list.classList.toggle('open');
   btn.textContent = open ? 'Show less ▴' : 'Show all conditions ▾';
 }
+
+function kitCatIcon(cat) {
+  if (cat.includes('Skin')) return '🌿';
+  if (cat.includes('Women')) return '🌸';
+  if (cat.includes('Respiratory')) return '🫁';
+  if (cat.includes('Mental')) return '🧠';
+  if (cat.includes('Children')) return '👶';
+  if (cat.includes('Chronic')) return '🔄';
+  return '💊';
+}
+
+function groupKits() {
+  const mount = document.getElementById('kitGrid');
+  if (!mount) return;
+  const cards = Array.from(mount.querySelectorAll('.kit-card'));
+  const groups = new Map();
+  cards.forEach(card => {
+    const cat = card.querySelector('.kit-cat')?.textContent.trim() || 'Other';
+    if (!groups.has(cat)) groups.set(cat, []);
+    groups.get(cat).push(card);
+  });
+  mount.innerHTML = '';
+  groups.forEach((items, cat) => {
+    const group = document.createElement('div');
+    group.className = 'kit-group';
+    const head = document.createElement('button');
+    head.type = 'button';
+    head.className = 'kit-group-head';
+    head.onclick = function () { toggleKitGroup(this); };
+    head.innerHTML = `<span class="kit-group-title">${kitCatIcon(cat)} ${cat} <small>(${items.length} kit${items.length > 1 ? 's' : ''})</small></span><span class="kit-group-toggle">Show kits ▾</span>`;
+    const body = document.createElement('div');
+    body.className = 'kit-group-body';
+    const inner = document.createElement('div');
+    inner.className = 'kit-grid';
+    items.forEach(item => inner.appendChild(item));
+    body.appendChild(inner);
+    group.appendChild(head);
+    group.appendChild(body);
+    mount.appendChild(group);
+  });
+}
+
+function toggleKitGroup(btn) {
+  const body = btn.nextElementSibling;
+  const open = body.classList.toggle('open');
+  btn.querySelector('.kit-group-toggle').textContent = open ? 'Hide kits ▲' : 'Show kits ▾';
+}
+
+groupKits();
 
 function showCategory(cat) {
   // Put the category list in the main app without leaving the page.
