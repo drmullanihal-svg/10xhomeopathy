@@ -925,7 +925,7 @@ function showCategory(cat) {
     const name = GUIDES[k]?.match(/<h1>(.*?) <span/)?.[1]?.replace(/<[^>]*>/g,'') || k;
     return `<a class="guide-row" href="guides/${cat}/${k}.html"><span>›</span><strong>${name}</strong><em>Guide →</em></a>`;
   }).join('');
-  document.getElementById('app').innerHTML = `<section class="section"><div class="wrap"><div class="guide-back"><button onclick="showHome('treatments')">← Back to Treatments</button></div><div class="head"><div class="kicker">Treatment category</div><h2>${title}</h2><p class="lead">Choose a condition to open the full guide.</p></div><div class="cat-card"><div class="guide-list">${rows}</div></div></div></section>`;
+  document.getElementById('app').innerHTML = `<section class="section"><div class="wrap"><div class="guide-back"><button onclick="showHome('treatments')">← Back to Treatments</button></div><div class="head"><div class="kicker">Treatment category</div><h2>${title}</h2><p class="lead">Choose a condition to open the full guide.</p></div><div class="cat-card"><div class="guide-list open">${rows}</div></div></div></section>`;
   history.pushState({category:cat},'', '#category-' + cat);
   window.scrollTo({top:0,behavior:'smooth'});
 }
