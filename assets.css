@@ -69,3 +69,26 @@ button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none
 @media(max-width:680px){.illustration-photos{justify-content:center}}
 .illustration-photo-wide{width:280px;height:auto;max-height:150px;object-fit:contain;background:#fff;border-radius:12px;border:1px solid var(--line)}
 .photo-credit-fine{margin-top:10px;font-size:10px;color:#5c7278;opacity:.65}
+
+/* Legal pages (Terms, Privacy, Refund) */
+.legal-header{background:var(--navy);padding:22px 0}
+.legal-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.legal-header .brand{display:flex;align-items:center;gap:10px;color:#fff}
+.legal-header .brand img{width:36px;height:36px;border-radius:10px;object-fit:cover}
+.legal-header .brand small{display:block;color:#9fb7ba;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.legal-header .back{color:#cfece7;font-size:13px;font-weight:800}
+.legal{padding:56px 0 90px}
+.legal .wrap{max-width:800px}
+.legal h1{font-size:clamp(28px,4vw,38px);letter-spacing:-.03em;margin:0 0 6px}
+.legal .updated{color:var(--muted);font-size:13px;margin-bottom:30px}
+.legal .lede{color:var(--muted);font-size:15px;margin-bottom:30px}
+.legal h2{font-size:21px;letter-spacing:-.02em;margin:36px 0 12px}
+.legal h3{font-size:15px;margin:20px 0 8px}
+.legal p{color:var(--ink);font-size:15px;margin:0 0 14px}
+.legal ul,.legal ol{padding-left:22px;margin:0 0 14px;color:var(--ink);font-size:15px}
+.legal li{margin-bottom:6px}
+.legal a{color:var(--teal);font-weight:700}
+.legal table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:13.5px}
+.legal th,.legal td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.legal th{background:var(--soft)}
+.legal-nav{display:flex;gap:18px;flex-wrap:wrap;margin:36px 0 0;padding-top:24px;border-top:1px solid var(--line);font-size:13px}
