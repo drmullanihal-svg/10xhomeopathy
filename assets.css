@@ -6,10 +6,13 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.65}
 button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,92%);margin:auto}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.navin{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:10px;border:0;background:none;text-decoration:none;font-weight:900;color:var(--ink)}
+.nav .wrap{width:min(1360px,96%)}
+.navin{min-height:78px;padding:12px 0;display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;border:0;background:none;text-decoration:none;font-weight:900;color:var(--ink);flex:0 0 auto}
 .brand img{width:44px;height:44px;border-radius:12px;object-fit:cover}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
-.navlinks{display:flex;align-items:center;gap:25px;font-size:14px;font-weight:750}.navlinks button,.navlinks a{border:0;background:none;color:var(--ink)}
-.cta{border:0;border-radius:999px;padding:12px 19px;background:linear-gradient(100deg,#049677,#1c8a44);color:#fff;font-weight:850;box-shadow:0 8px 22px rgba(4,150,119,.18)}
+.navlinks{display:flex;align-items:center;gap:16px;font-size:13.5px;font-weight:750;white-space:nowrap;overflow-x:auto;min-width:0;scrollbar-width:none;-ms-overflow-style:none}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks button,.navlinks a{border:0;background:none;color:var(--ink);white-space:nowrap;flex:0 0 auto}
+.cta{border:0;border-radius:999px;padding:12px 19px;background:linear-gradient(100deg,#049677,#1c8a44);color:#fff;font-weight:850;box-shadow:0 8px 22px rgba(4,150,119,.18);white-space:nowrap;flex:0 0 auto}
 .hero{background:radial-gradient(circle at 84% 18%,rgba(52,227,117,.15),transparent 28%),var(--navy);color:#fff;padding:70px 0}
 .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:#01d7b0}
 .hero h1{font-size:clamp(44px,6vw,72px);line-height:.98;letter-spacing:-.055em;margin:18px 0}.hero h1 .grad{color:transparent;background:linear-gradient(100deg,#fff,#37ea73,#c2eb4a);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}.gradient{color:transparent;background:linear-gradient(100deg,#01d7b0,#37ea73,#c2eb4a);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
