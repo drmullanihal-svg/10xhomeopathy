@@ -15,7 +15,11 @@
 <h1>Understand your health. <span class="grad">Track it better.</span></h1>
 <p>Online homeopathic consultations with <strong>Dr. Mulla Nihal</strong>, supported by detailed case-taking, safety screening, patient education and structured follow-up.</p>
 <div class="actions"><a class="btn btn-green" href="https://wa.me/916360379748?text=Hello%20Dr%20Nihal%2C%20I%20would%20like%20to%20book%20an%20online%20consultation." target="_blank">Book Consultation →</a><button class="btn btn-light" onclick="showHome('treatments')">Explore Treatments</button></div>
-</div><img class="hero-photo" src="doctor-photo.png" alt="Dr. Mulla Nihal"></div></section>
+</div><img class="hero-photo" src="doctor-photo.png" alt="Dr. Mulla Nihal"></div>
+<button class="scroll-down" onclick="scrollToNext()" aria-label="Scroll down">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+</button>
+</section>
 
 <section class="section"><div class="wrap"><div class="stats"><div class="stat"><strong>BHMS</strong><span>Homoeopathic physician</span></div><div class="stat"><strong>FCHD</strong><span>Homoeopathic Dermatology · MUHS</span></div><div class="stat"><strong>4.4+ yrs</strong><span>Clinical experience</span></div><div class="stat"><strong>₹499</strong><span>Consultation · Medicines separate</span></div></div></div></section>
 
@@ -893,6 +897,9 @@
 
 <footer class="footer"><div class="wrap"><strong>10X Homeopathy by Dr Nihal</strong><p>BHMS · FCHD (MUHS)</p><p><a href="mailto:drmullanihal@gmail.com">drmullanihal@gmail.com</a> · <a href="tel:+916360379748">+91 63603 79748</a> · <a href="https://www.instagram.com/10xhealthhack/" target="_blank">Instagram</a></p><p><a href="terms.html">Terms &amp; Conditions</a> · <a href="privacy-policy.html">Privacy Policy</a> · <a href="refund-policy.html">Refund &amp; Cancellation Policy</a></p><div class="fine">Educational content only. It is not a diagnosis or a substitute for emergency care or in-person assessment where required. Do not stop prescribed medicines without the clinician who prescribed them. No specific outcome is guaranteed.</div></div></footer>
 <div class="floating"><a class="btn btn-green" href="https://wa.me/916360379748?text=Hello%20Dr%20Nihal%2C%20I%20would%20like%20to%20book%20an%20online%20consultation." target="_blank">WhatsApp Consultation</a></div>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
 
 <script>
 const GUIDES = {
@@ -982,6 +989,18 @@ function toggleGuides(btn) {
   const open = list.classList.toggle('open');
   btn.textContent = open ? 'Show less ▴' : 'Show all conditions ▾';
 }
+
+function scrollToNext() {
+  const hero = document.querySelector('.hero');
+  const next = hero && hero.nextElementSibling;
+  if (next) next.scrollIntoView({behavior:'smooth'});
+}
+
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scrollTopBtn');
+  if (!btn) return;
+  btn.classList.toggle('visible', window.scrollY > 500);
+});
 
 function showFamilyPath(path) {
   const chooser = document.getElementById('familyChooser');
