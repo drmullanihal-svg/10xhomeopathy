@@ -821,9 +821,14 @@
 </div></section>
 
 <section class="section family" id="family"><div class="wrap">
-<div class="head" style="margin:0 auto 40px;text-align:center"><div class="kicker">Community</div><h2>Welcome to the 10X Family</h2><p class="lead" style="margin:0 auto">A community built for learning, sharing and growing together.</p></div>
+<div class="family-intro" id="familyIntro" style="text-align:center">
+  <button class="btn btn-green" onclick="openFamilyChooser()">Join 10X Community</button>
+  <p class="lead" style="margin:16px auto 0;max-width:480px">A community built for learning, sharing and growing together.</p>
+</div>
 
-<div class="family-chooser" id="familyChooser">
+<div class="head" id="familyHead" style="display:none;margin:0 auto 40px;text-align:center"><div class="kicker">Community</div><h2>Welcome to the 10X Family</h2><p class="lead" style="margin:0 auto">A community built for learning, sharing and growing together.</p></div>
+
+<div class="family-chooser" id="familyChooser" style="display:none">
   <div class="family-question">Who are you?</div>
   <div class="family-options">
     <button class="family-option" onclick="showFamilyPath('doctor')">
@@ -1001,6 +1006,16 @@ window.addEventListener('scroll', () => {
   if (!btn) return;
   btn.classList.toggle('visible', window.scrollY > 500);
 });
+
+function openFamilyChooser() {
+  const intro = document.getElementById('familyIntro');
+  const head = document.getElementById('familyHead');
+  const chooser = document.getElementById('familyChooser');
+  if (!intro || !head || !chooser) return;
+  intro.style.display = 'none';
+  head.style.display = '';
+  chooser.style.display = '';
+}
 
 function showFamilyPath(path) {
   const chooser = document.getElementById('familyChooser');
