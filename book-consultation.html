@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Booking your consultation… | 10X Homeopathy by Dr Nihal</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="assets.css">
+<!-- Google Ads / GA4 tag goes here once available, e.g.:
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-XXXXXXXXX');
+</script>
+-->
+</head>
+<body style="background:var(--navy);color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center">
+<div class="wrap" style="max-width:460px">
+  <img src="logo.png" alt="10X Homeopathy" style="width:56px;height:56px;border-radius:14px;margin:0 auto 22px">
+  <h1 style="font-size:26px;margin-bottom:10px">Taking you to WhatsApp…</h1>
+  <p style="color:#c4d8d9;margin-bottom:26px">You're being connected with Dr. Nihal to book your consultation. This should only take a second.</p>
+  <a id="waLink" class="btn green" href="https://wa.me/916360379748" target="_self">Continue to WhatsApp →</a>
+  <noscript><p style="margin-top:18px;color:#c4d8d9">JavaScript is disabled — tap the button above to continue.</p></noscript>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const defaultMsg = 'Hello Dr Nihal, I would like to book an online consultation.';
+  const msg = params.get('msg') || defaultMsg;
+  const waUrl = 'https://wa.me/916360379748?text=' + encodeURIComponent(msg);
+  document.getElementById('waLink').href = waUrl;
+  setTimeout(function () { window.location.replace(waUrl); }, 600);
+</script>
+</body></html>
